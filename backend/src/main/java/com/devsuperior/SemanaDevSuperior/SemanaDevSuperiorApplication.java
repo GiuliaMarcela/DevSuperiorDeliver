@@ -9,5 +9,4 @@ public class SemanaDevSuperiorApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SemanaDevSuperiorApplication.class, args);
 	}
-
 }
