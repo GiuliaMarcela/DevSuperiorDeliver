@@ -20,26 +20,34 @@ import com.devsuperior.SemanaDevSuperior.repositories.ProductRepository;
 public class OrderService {
 
 	@Autowired
-	private OrderRepository repOrder; 
-	
+	private OrderRepository repOrder;
+
 	@Autowired
 	private ProductRepository repProduct;
-	
+
 	@Transactional(readOnly = true)
-	public List<OrderDTO> findAll(){
+	public List<OrderDTO> findAll() {
 		List<Order> list = repOrder.findOrdersWithProducts();
 		return list.stream().map(x -> new OrderDTO(x)).collect(Collectors.toList());
 	}
-	
+
 	@Transactional
 	public OrderDTO insert(OrderDTO entityDTO) {
 		Order order = new Order(null, entityDTO.getAddress(), entityDTO.getLatitude(), entityDTO.getLongitude(),
 				Instant.now(), OrderStatus.PENDING);
-		for(ProductDTO products : entityDTO.getProducts()) {
+		for (ProductDTO products : entityDTO.getProducts()) {
 			Product product = repProduct.getOne(products.getId());
 			order.getProducts().add(product);
 		}
 		order = repOrder.save(order);
 		return new OrderDTO(order);
 	}
-} 
+
+	@Transactional
+	public OrderDTO setDelivered(Long id) {
+		Order order = repOrder.getOne(id);
+		order.setStatus(OrderStatus.DELIVERED);
+		order = repOrder.save(order);
+		return new OrderDTO(order);
+	}
+}
