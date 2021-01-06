@@ -16,7 +16,7 @@ import com.devsuperior.SemanaDevSuperior.dto.OrderDTO;
 import com.devsuperior.SemanaDevSuperior.services.OrderService;
 
 @RestController
-@RequestMapping("/orders")
+@RequestMapping(value = "/orders")
 public class OrderController {
 
 	@Autowired

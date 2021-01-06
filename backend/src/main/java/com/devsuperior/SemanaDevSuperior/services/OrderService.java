@@ -31,7 +31,7 @@ public class OrderService {
 		return list.stream().map(x -> new OrderDTO(x)).collect(Collectors.toList());
 	}
 	
-	@Transactional(readOnly = true)
+	@Transactional
 	public OrderDTO insert(OrderDTO entityDTO) {
 		Order order = new Order(null, entityDTO.getAddress(), entityDTO.getLatitude(), entityDTO.getLongitude(),
 				Instant.now(), OrderStatus.PENDING);

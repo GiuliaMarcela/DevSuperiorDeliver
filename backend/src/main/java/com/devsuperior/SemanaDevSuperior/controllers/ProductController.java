@@ -12,7 +12,7 @@ import com.devsuperior.SemanaDevSuperior.dto.ProductDTO;
 import com.devsuperior.SemanaDevSuperior.services.ProductService;
 
 @RestController
-@RequestMapping("/products")
+@RequestMapping(value = "/products")
 public class ProductController {
 	
 	@Autowired
