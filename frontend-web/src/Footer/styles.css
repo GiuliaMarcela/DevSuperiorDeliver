@@ -1,0 +1,20 @@
+.main-footer {
+  background-color: var(--dark-color);
+  color: #fff;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.footer-socials > * {
+  margin-right: 5px;
+}
