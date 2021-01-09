@@ -1,8 +1,7 @@
 import "./styles.css";
-
-import { ReactComponent as YoutubeIcon } from "../assets/images/Youtube.svg";
-import { ReactComponent as LinkedinIcon } from "../assets/images/Linkedin.svg";
-import { ReactComponent as InstagramIcon } from "../assets/images/Instagram.svg";
+import { ReactComponent as YoutubeIcon } from "../../assets/images/Youtube.svg";
+import { ReactComponent as LinkedinIcon } from "../../assets/images/Linkedin.svg";
+import { ReactComponent as InstagramIcon } from "../../assets/images/Instagram.svg";
 
 const Footer = () => {
   return (
